@@ -1,0 +1,33 @@
+{
+    "name": "jrebs/easyship-laravel",
+    "description": "A package to integrate easyship-php into Laravel applications",
+    "keywords": ["easyship", "api", "php", "laravel"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Justin Rebelo",
+            "homepage": "https://rebelo.dev/"
+        }
+    ],
+    "require": {
+        "jrebs/easyship-php": "*",
+        "laravel/framework": ">=7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Easyship\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Easyship\\Providers\\EasyshipServiceProvider"
+            ],
+            "aliases": {
+                "Easyship": "Easyship\\Facades\\Easyship"
+            }
+        }
+    }
+}
