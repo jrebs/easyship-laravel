@@ -23,6 +23,8 @@ return [
     */
     'webhook_secrets' => [
         env('EASYSHIP_WEBHOOK_SECRET_1', null),
+        // env('EASYSHIP_WEBHOOK_SECRET_2', null),
+
     ],
 
     /*

@@ -36,7 +36,7 @@ EASYSHIP_API_TOKEN="mytoken"
 EASYSHIP_API_HOST="http://my-dev-hostname"
 
 # Your secret key for verifying the signature of webhook posts
-EASYSHIP_WEBHOOK_SECRET="mysecret"
+EASYSHIP_WEBHOOK_SECRET_1="mysecret"
 ```
 
 If you want to take control of how configuration is handled, just publish
@@ -47,7 +47,12 @@ to be passed in to the `GuzzleHttp\Client` instance.
 ```sh
 php artisan vendor:publish --provider=Easyship\\Providers\\EasyshipServiceProvider
 ```
-Once published, season the `config/easyship.php` file to taste.
+Once published, season the `config/easyship.php` file to taste. One reason you
+may need to do this is to support incoming webhooks from different Easyship
+accounts. To this end, versions following `v1.0` have a modified configuration
+that supports any number of webhook secret keys. Modify the `webhook_secrets`
+array in the config file to contain each of the keys you will define in your
+`.env` file.
 
 ## Usage
 
