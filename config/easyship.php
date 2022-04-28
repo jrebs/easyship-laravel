@@ -18,10 +18,12 @@ return [
     |--------------------------------------------------------------------------
     | Easyship Webhooks Configuration
     |--------------------------------------------------------------------------
-    | Set your webhook secret key, required for decoding incoming webhook
+    | Set your webhook secret keys, required for decoding incoming webhook
     | posts.
     */
-    'webhook_secret' => env('EASYSHIP_WEBHOOK_SECRET', null),
+    'webhook_secrets' => [
+        env('EASYSHIP_WEBHOOK_SECRET_1', null),
+    ],
 
     /*
     |--------------------------------------------------------------------------
