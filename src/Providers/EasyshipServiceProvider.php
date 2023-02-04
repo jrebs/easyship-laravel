@@ -38,7 +38,7 @@ class EasyshipServiceProvider extends ServiceProvider
         $this->app->alias(EasyshipAPI::class, 'easyship.api');
 
         $this->app->singleton(Handler::class, function ($app) {
-            return new Handler(config('easyship.webhook_secret'));
+            return new Handler(...config('easyship.webhook_secrets'));
         });
         $this->app->alias(Handler::class, 'easyship.handler');
     }
